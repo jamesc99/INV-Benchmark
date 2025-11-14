@@ -7,12 +7,8 @@
 #SBATCH --mem=32gb
 #SBATCH --time=72:00:00
 #SBATCH --partition=medium
-#SBATCH -A proj-fs0002
-#SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=siyuan.cheng@bcm.edu
 
 # --- Environment Setup ---
-source /users/u250191/.bashrc
 conda activate svision-pro-env
 set -eox # Exit on error, print commands
 
@@ -35,11 +31,11 @@ time_to_seconds() {
 }
 
 # --- Configuration & Argument Handling ---
-ref38="/users/u250191/ryan_scratch_ln/reference/human-grch38.fasta"
-access_bed="/users/u250191/ryan_scratch_ln/tools/SVision-pro-1.9/src/pre_process/hg38.access.10M.bed"
+ref38="human-grch38.fasta"
+access_bed="/SVision-pro-1.9/src/pre_process/hg38.access.10M.bed"
 WORK_DIR=$(pwd)
-default_model_path="/users/u250191/ryan_scratch_ln/tools/SVision-pro-1.9/src/pre_process/model_liteunet_256_8_16_32_32_32.pth"
-bcftools=/hgsc_software/bcftools/bcftools-1.19/bin/bcftools
+default_model_path="/SVision-pro-1.9/src/pre_process/model_liteunet_256_8_16_32_32_32.pth"
+bcftools=/bcftools-1.19/bin/bcftools
 
 if [ -z "$1" ]; then
     echo "Error: No input BAM file provided."
@@ -98,7 +94,7 @@ echo "Running time successfully logged to running_time.log"
 # --- Post-processing ---
 echo "Running post-processing Python scripts..."
 # Use the unique output directory for all file operations
-python /users/u250191/ryan_scratch_ln/benchmark_inv/caller/svision-pro/extract_inv_add_simple_sv.py ${OUT_DIR}/${job_id}.vcf ${OUT_DIR}/inv_only_add_simplesv.vcf
+python /svision-pro/extract_inv_add_simple_sv.py ${OUT_DIR}/${job_id}.vcf ${OUT_DIR}/inv_only_add_simplesv.vcf
 grep -v '#' ${OUT_DIR}/inv_only_add_simplesv.vcf > ${OUT_DIR}/inv_only_add_simplesv_woheader.vcf
 
 echo "Sorting VCF..."
