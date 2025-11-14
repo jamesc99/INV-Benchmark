@@ -7,18 +7,15 @@
 #SBATCH --mem=50gb
 #SBATCH --time=72:00:00
 #SBATCH --partition=medium
-#SBATCH -A proj-fs0002
-#SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=siyuan.cheng@bcm.edu
 
 set -euo pipefail
 
 # --- Binaries ---
 VACMAP=vacmap   # or set absolute path if needed, e.g. /hgsc_software/vacmap/vacmap
-samtools=/hgsc_software/samtools/samtools-1.21/bin/samtools
+samtools=/samtools/samtools-1.21/bin/samtools
 
 # --- Reference (gz as in your BAM header) ---
-hg38_ref_gz=/users/u250191/ryan_scratch_ln/reference/human-grch38.fasta.gz
+hg38_ref_gz=human-grch38.fasta.gz
 
 # --- Threads (8 tasks × 2 cpus-per-task = 16) ---
 THREADS="${SLURM_CPUS_ON_NODE:-16}"
