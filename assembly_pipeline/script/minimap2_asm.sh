@@ -7,15 +7,12 @@
 #SBATCH --mem=50gb
 #SBATCH --time=72:00:00
 #SBATCH --partition=medium
-#SBATCH -A proj-fs0002
-#SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=siyuan.cheng@bcm.edu
 
 set -euo pipefail
 
-minimap2=/hgsc_software/minimap2/minimap2-2.22/bin/minimap2
-samtools=/hgsc_software/samtools/samtools-1.21/bin/samtools
-hg38_ref=/users/u250191/ryan_scratch_ln/reference/human-grch38.fasta
+minimap2=/minimap2-2.22/bin/minimap2
+samtools=/samtools/samtools-1.21/bin/samtools
+hg38_ref=human-grch38.fasta
 
 input_asm_fa=$1
 temp_name=$2
