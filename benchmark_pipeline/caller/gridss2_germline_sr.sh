@@ -7,17 +7,12 @@
 #SBATCH --mem=32gb
 #SBATCH --time=48:00:00
 #SBATCH --partition=medium
-#SBATCH -A proj-fs0002
-#SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=siyuan.cheng@bcm.edu
 
 # --- Environment Setup ---
-source ~/.bashrc
-mamba activate /hgsc_software/miniconda/miniconda3/envs/gridss-2.13.2
+mamba activate gridss-2.13.2
 set -eox # Exit on error, print commands
 
 # --- Helper Function for Time Conversion ---
-# Converts time format (e.g., 1m2.345s) into total seconds (e.g., 62.345)
 time_to_seconds() {
     local time_str=$1
     local minutes=0
@@ -35,8 +30,8 @@ time_to_seconds() {
 }
 
 # --- Configuration & Argument Handling ---
-exclude_bed_hg38="/stornext/snfs170/next-gen/scratch/ryan/benchmark_inv/caller/gridss2/hg38_exclude_list_ENCFF356LFX.bed"
-reference="/stornext/snfs170/next-gen/scratch/ryan/reference/human-grch38.fasta"
+exclude_bed_hg38="gridss2/hg38_exclude_list_ENCFF356LFX.bed"
+reference="human-grch38.fasta"
 working_dir=$(pwd)
 
 if [ -z "$1" ]; then
@@ -95,6 +90,6 @@ mamba activate R_env_4.4.0
 
 echo "Running downstream R script for inversion analysis..."
 # Run the external R script on the uniquely named output VCF
-Rscript /users/u250191/ryan_scratch_ln/benchmark_inv/caller/gridss2/downstream_inv.R "${output_vcf}" "hg38" "${working_dir}"
+Rscript /gridss2/downstream_inv.R "${output_vcf}" "hg38" "${working_dir}"
 echo "All steps complete."
 
