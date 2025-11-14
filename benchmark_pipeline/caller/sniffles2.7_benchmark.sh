@@ -7,13 +7,8 @@
 #SBATCH --mem=32gb
 #SBATCH --time=72:00:00
 #SBATCH --partition=medium
-#SBATCH -A proj-fs0002
-#SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=siyuan.cheng@bcm.edu
 
 # --- Environment Setup ---
-. /users/u250191/.bashrc
-#mamba activate sniffles2
 mamba activate sniffles2_270
 set -eox
 
@@ -39,11 +34,7 @@ time_to_seconds() {
 }
 
 # --- Reference Genome Paths ---
-ref37="/users/mmahmoud/home/public_workplace/scripts/snakefiles/test/hs37d5_mainchr.fa"
-ref38="/users/u250191/ryan_scratch_ln/reference/human-grch38.fasta"
-ref38_decoy="/users/mmahmoud/home/source/hifi_panel/new_instalation/reference/GRCh38_masked_v2_decoy_gene.fasta"
-T2T="/users/sedlazec/mydir/projects/beta_globolin/demux_reads/analysis/reference/chm13v2.0.fasta"
-RHESUS="/users/mmahmoud/home/projects/rhesus/reference/GCA_003339765.3_Mmul_10_genomic.maskPAR.withMT.mainchrs.fa"
+ref38="human-grch38.fasta"
 
 # --- Argument and Name Handling ---
 if [ "$#" -ne 1 ]; then
