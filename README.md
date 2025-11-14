@@ -81,7 +81,7 @@ RG_SM: Information in RG_SM tag
 Outputs:
 VACmap_BAM: Alignment BAM file
 ```
-
+<br><br>
 ### Step2: Caller
 
 **cutesv2_germline.sh**: Run cuteSV2 on alignment BAM file to generate INV calls.
@@ -98,7 +98,7 @@ VACmap_BAM: Alignment BAM file
 
 **manta_germline_shortread.sh**: Run Manta on alignment BAM file to generate INV calls.
 
-
+<br><br>
 ### Step3: Truvari bench
 **automated_truvari_bench.sh**
 
