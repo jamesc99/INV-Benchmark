@@ -25,7 +25,7 @@ time_to_seconds() {
 }
 
 ref38="human-grch38.fasta"
-tr_bed="/severus/human_GRCh38_no_alt_analysis_set.trf.bed"
+tr_bed="/severus/human_GRCh38_no_alt_analysis_set.trf.bed"    #provided in /benchmark_pipeline/caller
 WORK_DIR=$(pwd)
 severus=/Severus-1.1/severus.py
 
@@ -69,6 +69,6 @@ grep -v '#' inv_severus.vcf > inv_severus_woheader.vcf
 
 mamba deactivate
 
-python add_end_vcf_severus.py inv_severus.vcf
-python severus_vcf2bed.py
+python add_end_vcf_severus.py inv_severus.vcf    #provided in /benchmark_pipeline/caller
+python severus_vcf2bed.py                        #provided in /benchmark_pipeline/caller
 
