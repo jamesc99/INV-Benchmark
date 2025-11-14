@@ -14,7 +14,7 @@ ref_name=$2
 default_refdist=100000
 
 # Reference directory based on the input reference name
-ref_dir=/users/u250191/ryan_scratch_ln/benchmark_inv/reference_Cell_paper/assembly_based_category/truvari_ref/round1_try2simple/$ref_name
+ref_dir=/data_zenodo/truvari_ref_vcf/$ref_name    #e.g, HG002, HG02818, NA19240
 
 # Check if the corresponding reference directory exists
 if [ ! -d "$ref_dir" ]; then
@@ -23,7 +23,6 @@ if [ ! -d "$ref_dir" ]; then
 fi
 
 # Source the bashrc to get the conda environment
-. /users/u250191/.bashrc
 mamba activate truvari
 
 # Copy the input VCF file to the current directory
@@ -69,13 +68,8 @@ for ref_vcf in $(ls $ref_dir/*.vcf.gz); do
 
     # Run the first truvari bench with the dynamically set refdist and chunksize
     truvari bench --pctseq 0 --pick multi --chunksize $current_refdist --refdist $current_refdist --pctsize 0.3 -b $ref_vcf -c $input_vcf --sizemax 5400000 -o ./${output_dir_name}_pctseq0_sizemax_5.4mb
-    python /users/u250191/ryan_scratch_ln/scripts/benchmark_inv/truvari/cal_median_normalized_breakpoint_length_deviation.py ./${output_dir_name}_pctseq0_sizemax_5.4mb/tp-comp.vcf.gz
+    python cal_median_normalized_breakpoint_length_deviation.py ./${output_dir_name}_pctseq0_sizemax_5.4mb/tp-comp.vcf.gz
     mv length_breakpoint_deviation.log ./${output_dir_name}_pctseq0_sizemax_5.4mb
-
-    # Run the second truvari bench with --pctseq 0
-    #truvari bench --pctseq 0 --pick multi --refdist 1000 --pctsize 0.3 -b $ref_vcf -c $input_vcf -o ./${output_dir_name}_pctseq0_sizemax_50kb
-    #python /users/u250191/ryan_scratch_ln/scripts/benchmark_inv/truvari/cal_breakpoint_length_deviation.py ./${output_dir_name}_pctseq0_sizemax_50kb/tp-comp.vcf.gz
-    #mv length_breakpoint_deviation.log ./${output_dir_name}_pctseq0_sizemax_50kb
 
     echo "Finished running truvari bench for $ref_vcf against $input_vcf."
 done
