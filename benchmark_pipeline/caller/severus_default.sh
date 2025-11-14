@@ -7,11 +7,7 @@
 #SBATCH --mem=32gb
 #SBATCH --time=72:00:00
 #SBATCH --partition=medium
-#SBATCH -A proj-fs0002
-#SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=siyuan.cheng@bcm.edu
 
-source /users/u250191/.bashrc
 mamba activate severus_env
 
 time_to_seconds() {
@@ -28,10 +24,10 @@ time_to_seconds() {
     echo "$minutes * 60 + $seconds" | bc
 }
 
-ref38="/users/u250191/ryan_scratch_ln/reference/human-grch38.fasta"
-tr_bed="/users/u250191/ryan_scratch_ln/benchmark_inv/caller/severus/human_GRCh38_no_alt_analysis_set.trf.bed"
+ref38="human-grch38.fasta"
+tr_bed="/severus/human_GRCh38_no_alt_analysis_set.trf.bed"
 WORK_DIR=$(pwd)
-severus=/stornext/snfs170/next-gen/scratch/ryan/tools/Severus-1.1/severus.py
+severus=/Severus-1.1/severus.py
 
 if [ -z "$1" ]; then
     exit 1
@@ -73,6 +69,6 @@ grep -v '#' inv_severus.vcf > inv_severus_woheader.vcf
 
 mamba deactivate
 
-python /users/u250191/ryan_scratch_ln/scripts/benchmark_inv/caller/add_end_vcf_severus.py inv_severus.vcf
-python /users/u250191/ryan_scratch_ln/scripts/benchmark_inv/caller/severus_vcf2bed.py
+python add_end_vcf_severus.py inv_severus.vcf
+python severus_vcf2bed.py
 
