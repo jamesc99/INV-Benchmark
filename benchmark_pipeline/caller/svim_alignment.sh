@@ -7,12 +7,8 @@
 #SBATCH --mem=32gb
 #SBATCH --time=72:00:00
 #SBATCH --partition=medium
-#SBATCH -A proj-fs0002
-#SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=siyuan.cheng@bcm.edu
 
 # --- Environment Setup ---
-source /users/u250191/.bashrc
 mamba activate svim_env
 set -eox # Exit on error, print commands
 
@@ -35,7 +31,7 @@ time_to_seconds() {
 }
 
 # --- Configuration & Argument Handling ---
-ref38="/users/u250191/ryan_scratch_ln/reference/human-grch38.fasta"
+ref38="human-grch38.fasta"
 WORK_DIR=$(pwd)
 
 if [ -z "$1" ]; then
@@ -96,7 +92,7 @@ echo "Running time successfully logged to running_time.log"
 # --- Post-processing ---
 # All post-processing now uses files from the unique output directory
 echo "Filtering VCF with bcftools..."
-/hgsc_software/bcftools/bcftools-1.19/bin/bcftools view -i 'QUAL >= 10' ${OUT_DIR}/variants.vcf > ${OUT_DIR}/variants_qual_greater10.vcf
+bcftools view -i 'QUAL >= 10' ${OUT_DIR}/variants.vcf > ${OUT_DIR}/variants_qual_greater10.vcf
 
 echo "Filtering for inversions..."
 grep -E '^#|SVTYPE=INV' ${OUT_DIR}/variants_qual_greater10.vcf > ${OUT_DIR}/filtered_qual_10_inv.vcf
