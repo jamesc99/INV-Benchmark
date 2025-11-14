@@ -1,7 +1,5 @@
 # Benchmark for simple and complex genome inversions
 
-**This is the github repository to supplement our preprint : preprint link here**
-
 The repository contains scripts and documentation for building and assessing the inversions benchmark set. It includes the script to build benchmark inversion set, and the benchmarking process with seven SV callers on five samples (HG002, HG00733, HG02818, HG03486, NA19240).
 
 There are two main components in this repository: inversion benchmark assembly pipeline and performance benchmark pipeline.
