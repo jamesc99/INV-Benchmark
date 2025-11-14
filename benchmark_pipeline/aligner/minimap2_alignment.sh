@@ -6,19 +6,12 @@
 #SBATCH --cpus-per-task=2
 #SBATCH --time=10-72:00:00
 #SBATCH --partition=long
-#SBATCH -A proj-fs0002
-#SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=siyuan.cheng@bcm.edu
 
 # Reference genomes
-ref37="/users/mmahmoud/home/public_workplace/scripts/snakefiles/test/hs37d5_mainchr.fa"
-ref38="/users/u250191/ryan_scratch_ln/reference/human-grch38.fasta"
-ref38_decoy="/users/mmahmoud/home/source/hifi_panel/new_instalation/reference/GRCh38_masked_v2_decoy_gene.fasta"
-T2T="/users/sedlazec/mydir/projects/beta_globolin/demux_reads/analysis/reference/chm13v2.0.fasta"
-RHESUS="/users/mmahmoud/home/projects/rhesus/reference/GCA_003339765.3_Mmul_10_genomic.maskPAR.withMT.mainchrs.fa"
+ref38="human-grch38.fasta"
 
-minimap="/users/u250191/ryan_scratch_ln/tools/minimap2-2.28_x64-linux/minimap2"
-samtools="/hgsc_software/samtools/samtools-1.19.2/bin/samtools"
+minimap="/minimap2-2.28_x64-linux/minimap2"
+samtools="/samtools-1.21/bin/samtools"
 
 # Get alignment type, FASTQ file path, and sample information from arguments
 ALIGN_TYPE=$1
