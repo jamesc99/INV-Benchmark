@@ -90,6 +90,8 @@ mamba activate R_env_4.4.0
 
 echo "Running downstream R script for inversion analysis..."
 # Run the external R script on the uniquely named output VCF
-Rscript /gridss2/downstream_inv.R "${output_vcf}" "hg38" "${working_dir}"
+Rscript /gridss2/downstream_inv.R "${output_vcf}" "hg38" "${working_dir}"        #provided in /benchmark_pipeline/caller
+# Note: The Rscript used for INV analysis was provided externally: https://github.com/PapenfussLab/gridss/issues/670
+
 echo "All steps complete."
 
