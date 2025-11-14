@@ -6,11 +6,7 @@
 #SBATCH --mem=32gb
 #SBATCH --time=72:00:00
 #SBATCH --partition=medium
-#SBATCH -A proj-fs0002
-#SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=siyuan.cheng@bcm.edu
 
-source /users/u250191/.bashrc
 mamba activate manta_env
 
 time_to_seconds() {
@@ -27,9 +23,9 @@ time_to_seconds() {
     echo "$minutes * 60 + $seconds" | bc
 }
 
-MANTA_INSTALL_DIR="/hgsc_software/manta/manta-1.6.0"
-REFERENCE_GENOME="/stornext/snfs170/next-gen/scratch/ryan/reference/human-grch38.fasta"
-samtools="/hgsc_software/samtools/samtools-1.19.2/bin/samtools"
+MANTA_INSTALL_DIR="/manta/manta-1.6.0"
+REFERENCE_GENOME="human-grch38.fasta"
+samtools="/samtools/samtools-1.21/bin/samtools"
 WORK_DIR=$(pwd)
 
 if [ -z "$1" ]; then
