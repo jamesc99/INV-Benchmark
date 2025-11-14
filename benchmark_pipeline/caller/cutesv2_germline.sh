@@ -7,12 +7,8 @@
 #SBATCH --mem=32gb
 #SBATCH --time=72:00:00
 #SBATCH --partition=medium
-#SBATCH -A proj-fs0002
-#SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=siyuan.cheng@bcm.edu
 
 # --- Environment Setup ---
-source /users/u250191/.bashrc
 mamba activate cutesv2
 set -eox # Exit on error, print commands
 
@@ -39,7 +35,7 @@ time_to_seconds() {
 
 
 # --- Configuration ---
-ref38="/users/u250191/ryan_scratch_ln/reference/human-grch38.fasta"
+ref38="human-grch38.fasta"
 WORK_DIR=$(pwd)
 
 # --- Argument and Name Handling ---
