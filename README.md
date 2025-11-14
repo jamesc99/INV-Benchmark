@@ -21,6 +21,7 @@ Inputs:
 INPUT_FASTA: Assembly FASTA file path (haplotype-specific)
 OUTPUT_NAME: Prefix of output files
 
+
 Outputs:
 sorted_${OUTPUT_NAME}.bam: Assembly BAM file (haplotype-specific)
 ```
@@ -36,9 +37,17 @@ Paternal_assembly_minimap2 BAM: Paternal assembly BAM file by minimap2
 Maternal_assembly_minimap2 BAM: Maternal assembly BAM file by minimap2
 Paternal_assembly_VACmap BAM: Paternal assembly BAM file by VACmap
 Maternal_assembly_VACmap BAM: Maternal assembly BAM file by VACmap
+TR_5Kb: Tandem Repeats annotation file for TR >= 5 Kb created by merging Adotto and UCSC Table Browser (provided in /assembly_pipeline/repeats_annotation/)
+TR_10Kb: Tandem Repeats annotation file for TR >= 10 Kb created by merging Adotto and UCSC Table Browser (provided in /assembly_pipeline/repeats_annotation/)
+Centromere: Centromere annotation file from UCSC Table Browser (provided in /assembly_pipeline/repeats_annotation/)
+(optional) Debug: Debug mode by generating detailed log for each Strand-seq locus
+
 
 Outputs:
-
+Final VCF: Assembly-refined VCF file for each Strand-seq loci. Used for later benchmark (provided in /data_zenodo/truvari_ref_vcf/)
+Dropped VCF: All inversion that were excluded from the final VCF, primarily those on chrY, in centromeres, or where both aligners reported NOSIGNAL
+Statistics Report: A text report summarizing the contents of the Final VCF
+Aligner Comparison Table: A comparison matrix showing how the two aligners agreed or disagreed before they were merged
 ```
 
 
