@@ -9,7 +9,7 @@ There are two main components in this repository: inversion benchmark assembly p
 ## Data Availability
 All VCF files used in this benchmark were uploaded to: zenodo link here.
 
-## Assembly-based INV benchmark set pipeline
+## Assembly-based INV set generation pipeline
 
 **minimap2_asm.sh/vacmap_asm.sh**
 
@@ -49,6 +49,14 @@ Dropped VCF: All inversion that were excluded from the final VCF, primarily thos
 Statistics Report: A text report summarizing the contents of the Final VCF
 Aligner Comparison Table: A comparison matrix showing how the two aligners agreed or disagreed before they were merged
 ```
+
+
+## Benchmarking pipeline
+
+
+
+
+
 
 
 
