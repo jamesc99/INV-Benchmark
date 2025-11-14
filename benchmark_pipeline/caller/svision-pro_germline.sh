@@ -32,9 +32,9 @@ time_to_seconds() {
 
 # --- Configuration & Argument Handling ---
 ref38="human-grch38.fasta"
-access_bed="/SVision-pro-1.9/src/pre_process/hg38.access.10M.bed"
+access_bed="/SVision-pro-1.9/src/pre_process/hg38.access.10M.bed"								#provided by SVision-pro package
 WORK_DIR=$(pwd)
-default_model_path="/SVision-pro-1.9/src/pre_process/model_liteunet_256_8_16_32_32_32.pth"
+default_model_path="/SVision-pro-1.9/src/pre_process/model_liteunet_256_8_16_32_32_32.pth"		#provided by SVision-pro package
 bcftools=/bcftools-1.19/bin/bcftools
 
 if [ -z "$1" ]; then
@@ -94,7 +94,7 @@ echo "Running time successfully logged to running_time.log"
 # --- Post-processing ---
 echo "Running post-processing Python scripts..."
 # Use the unique output directory for all file operations
-python /svision-pro/extract_inv_add_simple_sv.py ${OUT_DIR}/${job_id}.vcf ${OUT_DIR}/inv_only_add_simplesv.vcf
+python /svision-pro/extract_inv_add_simple_sv.py ${OUT_DIR}/${job_id}.vcf ${OUT_DIR}/inv_only_add_simplesv.vcf		#provided in /benchmark_pipeline/caller
 grep -v '#' ${OUT_DIR}/inv_only_add_simplesv.vcf > ${OUT_DIR}/inv_only_add_simplesv_woheader.vcf
 
 echo "Sorting VCF..."
