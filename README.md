@@ -113,7 +113,8 @@ Outputs:
 ${Ref_name}_${base_name}: Folder contains Truvari bench output
 ```
 
-
+## Publication
+Check out the preprint [here]().
 
 
 
