@@ -1,0 +1,53 @@
+##fileformat=VCFv4.3
+##source=SVision v1.9
+##contig=<ID=chr1,length=248956422>
+##contig=<ID=chr2,length=242193529>
+##contig=<ID=chr3,length=198295559>
+##contig=<ID=chr4,length=190214555>
+##contig=<ID=chr5,length=181538259>
+##contig=<ID=chr6,length=170805979>
+##contig=<ID=chr7,length=159345973>
+##contig=<ID=chr8,length=145138636>
+##contig=<ID=chr9,length=138394717>
+##contig=<ID=chr10,length=133797422>
+##contig=<ID=chr11,length=135086622>
+##contig=<ID=chr12,length=133275309>
+##contig=<ID=chr13,length=114364328>
+##contig=<ID=chr14,length=107043718>
+##contig=<ID=chr15,length=101991189>
+##contig=<ID=chr16,length=90338345>
+##contig=<ID=chr17,length=83257441>
+##contig=<ID=chr18,length=80373285>
+##contig=<ID=chr19,length=58617616>
+##contig=<ID=chr20,length=64444167>
+##contig=<ID=chr21,length=46709983>
+##contig=<ID=chr22,length=50818468>
+##contig=<ID=chrX,length=156040895>
+##contig=<ID=chrY,length=57227415>
+##contig=<ID=chrM,length=16569>
+##CHROM=<CHROM=XXX,Description="Chromosome ID">
+##POS=<POS=XXX,Description="Start position of the SV described in this region">
+##ID=<ID=XXX,Description="ID of the SV described in this region">
+##REF=<REF=N,Description="Ref's sequence in that region, default=N">
+##QUAL=<QUAL=XXX,Description="The SV quality of the SV described in this region">
+##ALT=<ID=SV,Description="Simple SVs">
+##ALT=<ID=CSV,Description="Complex or nested SVs">
+##FILTER=<ID=PASS,Description="Passed">
+##FILTER=<ID=POLY,Description="Polymorphic">
+##INFO=<ID=END,Number=1,Type=Integer,Description="End position of the SV described in this region">
+##INFO=<ID=IT,Number=1,Type=String,Description="Inheritype of the whole event ">
+##INFO=<ID=SVLEN,Number=1,Type=Integer,Description="Difference in length between REF and ALT alleles">
+##INFO=<ID=BKPS,Number=.,Type=String,Description="All breakpoints (length-start-end-insert) in this region.">
+##INFO=<ID=BKPSIT,Number=.,Type=String,Description="All breakpoints' inheritype in this region.">
+##INFO=<ID=SVTYPE,Number=1,Type=String,Description="CNN predicted SV type, containing INS, DEL, DUP, tDUP (tandem duplication) and INV">
+##INFO=<ID=SUPPORT,Number=1,Type=Integer,Description="SV support number in this region">
+##INFO=<ID=VAF,Number=1,Type=Float,Description="SV allele frequency in this region">
+##INFO=<ID=RNAMES,Number=.,Type=String,Description="SV support read names in this region">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=DR,Number=1,Type=String,Description="high-quality reference reads">
+##FORMAT=<ID=DV,Number=1,Type=String,Description="high-quality variant reads">
+##INFO=<ID=SIMPLE_SV,Number=1,Type=String,Description="simple type of SV, only INV">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	hg00733_pb_minimap2_5x_sorted.bam
+chr1	43593642	108	N	CSV	.	PASS	END=43594284;SVLEN=1009;SVTYPE=INV+INS+DEL;SUPPORT=9;VAF=1.0;BKPS=INV_574_chr1_43593642_43594216_43593642,INS_367_chr1_43594215_43594215_43594215,DEL_68_chr1_43594216_43594284_43594216;RNAMES=m54329U_190629_180018/169019586/ccs,m54329U_190615_010947/21692638/ccs,m54329U_190629_180018/104139197/ccs,m54329U_190827_173812/136250500/ccs,m54329U_190827_173812/69075859/ccs,m54329U_190617_231905/136643659/ccs,m54329U_190615_010947/17892293/ccs,m54329U_190827_173812/28314343/ccs,m54329U_190629_180018/122618119/ccs;SIMPLE_SV=INV	GT	1/1
+chr6	31041445	1658	N	CSV	.	PASS	END=31042319;SVLEN=3692;SVTYPE=INS+INV+INS;SUPPORT=5;VAF=1.0;BKPS=INS_2190_chr6_31041445_31041445_31041445,INV_873_chr6_31041446_31042319_31041446,INS_629_chr6_31042318_31042318_31042318;RNAMES=m54329U_190607_185248/9242573/ccs,m54329U_190827_173812/164300854/ccs,m54329U_190615_010947/97780609/ccs,m54329U_190827_173812/79825605/ccs,m54329U_190615_010947/174129639/ccs;SIMPLE_SV=INV	GT	1/1
+chr8	6297863	2235	N	SV	.	PASS	END=6299769;SVLEN=1906;SVTYPE=INV;SUPPORT=7;VAF=0.78;BKPS=INV_1906_chr8_6297863_6299769_6297863;RNAMES=m54329U_190629_180018/147457487/ccs,m54329U_190615_010947/166660656/ccs,m54329U_190629_180018/139069923/ccs,m54329U_190827_173812/14943373/ccs,m54329U_190615_010947/56754535/ccs,m54329U_190615_010947/170395016/ccs,m54329U_190617_231905/177474004/ccs;SIMPLE_SV=INV	GT	0/1

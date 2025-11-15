@@ -1,0 +1,125 @@
+##fileformat=VCFv4.2
+##source=Sniffles2_2.7.0
+##command="/stornext/snfs170/next-gen/scratch/ryan/tools/miniforge3/envs/sniffles2_270/bin/sniffles --input /users/u250191/ryan_scratch_ln/benchmark_inv/round2_analysis_251111/different_coverage/data/new_data/5x/hg02818/pb_minimap2/hg02818_pb_minimap2_5x_sorted.bam --vcf 989589.vcf --sample-id 989589 --reference /users/u250191/ryan_scratch_ln/reference/human-grch38.fasta --threads 8"
+##fileDate="2025/11/12 17:01:26"
+##contig=<ID=chr1,length=248956422>
+##contig=<ID=chr2,length=242193529>
+##contig=<ID=chr3,length=198295559>
+##contig=<ID=chr4,length=190214555>
+##contig=<ID=chr5,length=181538259>
+##contig=<ID=chr6,length=170805979>
+##contig=<ID=chr7,length=159345973>
+##contig=<ID=chr8,length=145138636>
+##contig=<ID=chr9,length=138394717>
+##contig=<ID=chr10,length=133797422>
+##contig=<ID=chr11,length=135086622>
+##contig=<ID=chr12,length=133275309>
+##contig=<ID=chr13,length=114364328>
+##contig=<ID=chr14,length=107043718>
+##contig=<ID=chr15,length=101991189>
+##contig=<ID=chr16,length=90338345>
+##contig=<ID=chr17,length=83257441>
+##contig=<ID=chr18,length=80373285>
+##contig=<ID=chr19,length=58617616>
+##contig=<ID=chr20,length=64444167>
+##contig=<ID=chr21,length=46709983>
+##contig=<ID=chr22,length=50818468>
+##contig=<ID=chrX,length=156040895>
+##contig=<ID=chrY,length=57227415>
+##ALT=<ID=INS,Description="Insertion">
+##ALT=<ID=DEL,Description="Deletion">
+##ALT=<ID=DUP,Description="Duplication">
+##ALT=<ID=INV,Description="Inversion">
+##ALT=<ID=BND,Description="Breakend; Translocation">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=GQ,Number=1,Type=Integer,Description="Genotype quality">
+##FORMAT=<ID=DR,Number=1,Type=Integer,Description="Number of reference reads">
+##FORMAT=<ID=DV,Number=1,Type=Integer,Description="Number of variant reads">
+##FORMAT=<ID=PS,Number=1,Type=Integer,Description="Phase-block, zero if none or not phased">
+##FORMAT=<ID=ID,Number=1,Type=String,Description="Individual sample SV ID for multi-sample output">
+##FILTER=<ID=PASS,Description="All filters passed">
+##FILTER=<ID=GT,Description="Genotype filter">
+##FILTER=<ID=SUPPORT_MIN,Description="Minimum read support filter">
+##FILTER=<ID=STDEV_POS,Description="SV Breakpoint standard deviation filter">
+##FILTER=<ID=STDEV_LEN,Description="SV length standard deviation filter">
+##FILTER=<ID=COV_MIN,Description="Minimum coverage filter">
+##FILTER=<ID=COV_MIN_GT,Description="Minimum coverage filter (missing genotype)">
+##FILTER=<ID=COV_CHANGE_DEL,Description="Coverage change filter for DEL">
+##FILTER=<ID=COV_CHANGE_DUP,Description="Coverage change filter for DUP">
+##FILTER=<ID=COV_CHANGE_INS,Description="Coverage change filter for INS">
+##FILTER=<ID=COV_CHANGE_FRAC_US,Description="Coverage fractional change filter: upstream-start">
+##FILTER=<ID=COV_CHANGE_FRAC_SC,Description="Coverage fractional change filter: start-center">
+##FILTER=<ID=COV_CHANGE_FRAC_CE,Description="Coverage fractional change filter: center-end">
+##FILTER=<ID=COV_CHANGE_FRAC_ED,Description="Coverage fractional change filter: end-downstream">
+##FILTER=<ID=COV_VAR,Description="Coverage variance exceeded">
+##FILTER=<ID=MOSAIC_VAF,Description="Mosaic variant allele fraction filter">
+##FILTER=<ID=NOT_MOSAIC_VAF,Description="Variant allele fraction filter for non-mosaic">
+##FILTER=<ID=ALN_NM,Description="Length adjusted mismatch filter">
+##FILTER=<ID=STRAND_BND,Description="Strand support filter for BNDs">
+##FILTER=<ID=STRAND,Description="Strand support filter for germline SVs">
+##FILTER=<ID=STRAND_MOSAIC,Description="Strand support filter for mosaic SVs">
+##FILTER=<ID=SVLEN_MIN,Description="SV length filter">
+##FILTER=<ID=SVLEN_MIN_MOSAIC,Description="SV length filter for mosaic SVs">
+##FILTER=<ID=SINGLE_BREAK,Description="A single break point was detected but not classified as an SV.">
+##INFO=<ID=PRECISE,Number=0,Type=Flag,Description="Structural variation with precise breakpoints">
+##INFO=<ID=IMPRECISE,Number=0,Type=Flag,Description="Structural variation with imprecise breakpoints">
+##INFO=<ID=MOSAIC,Number=0,Type=Flag,Description="Structural variation classified as putative mosaic">
+##INFO=<ID=SVLEN,Number=1,Type=Integer,Description="Length of structural variation">
+##INFO=<ID=SVTYPE,Number=1,Type=String,Description="Type of structural variation">
+##INFO=<ID=CHR2,Number=1,Type=String,Description="Mate chromsome for BND SVs">
+##INFO=<ID=SUPPORT,Number=1,Type=Integer,Description="Number of reads supporting the structural variation">
+##INFO=<ID=SUPPORT_INLINE,Number=1,Type=Integer,Description="Number of reads supporting an INS/DEL SV (non-split events only)">
+##INFO=<ID=SUPPORT_SA,Number=1,Type=Integer,Description="Number of reads supporting a DEL SV through supplementary alignments (split events)">
+##INFO=<ID=SUPPORT_LONG,Number=1,Type=Integer,Description="Number of soft-clipped reads putatively supporting the long insertion SV">
+##INFO=<ID=END,Number=1,Type=Integer,Description="End position of structural variation">
+##INFO=<ID=STDEV_POS,Number=1,Type=Float,Description="Standard deviation of structural variation start position">
+##INFO=<ID=STDEV_LEN,Number=1,Type=Float,Description="Standard deviation of structural variation length">
+##INFO=<ID=COVERAGE,Number=.,Type=Float,Description="Coverages near upstream, start, center, end, downstream of structural variation">
+##INFO=<ID=STRAND,Number=1,Type=String,Description="Strands of supporting reads for structural variant">
+##INFO=<ID=AC,Number=.,Type=Integer,Description="Allele count, summed up over all samples">
+##INFO=<ID=SUPP_VEC,Number=1,Type=String,Description="List of read support for all samples">
+##INFO=<ID=CONSENSUS_SUPPORT,Number=1,Type=Integer,Description="Number of reads that support the generated insertion (INS) consensus sequence">
+##INFO=<ID=RNAMES,Number=.,Type=String,Description="Names of supporting reads (if enabled with --output-rnames)">
+##INFO=<ID=VAF,Number=1,Type=Float,Description="Variant Allele Fraction">
+##INFO=<ID=COVERAGE_VAR,Number=1,Type=Float,Description="Variance of coverage across large events">
+##INFO=<ID=NM,Number=.,Type=Float,Description="Mean number of query alignment length adjusted mismatches of supporting reads">
+##INFO=<ID=PHASE,Number=.,Type=String,Description="Phasing information derived from supporting reads, represented as list of: HAPLOTYPE,PHASESET,HAPLOTYPE_SUPPORT,PHASESET_SUPPORT,HAPLOTYPE_FILTER,PHASESET_FILTER">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	989589
+chr1	16680841	Sniffles2.INV.65AS0	C	<INV>	60	PASS	PRECISE;SVTYPE=INV;SVLEN=129371498;END=146052339;SUPPORT=8;COVERAGE=2,11,3,2,10;STRAND=+;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.800	GT:GQ:DR:DV	1/1:2:2:8
+chr1	26641622	Sniffles2.INV.65CS0	C	<INV>	55	PASS	PRECISE;SVTYPE=INV;SVLEN=4809;END=26646431;SUPPORT=3;COVERAGE=2,3,3,3,2;STRAND=+-;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.750	GT:GQ:DR:DV	0/1:1:1:3
+chr2	138247429	Sniffles2.INV.5BES1	A	<INV>	60	PASS	PRECISE;SVTYPE=INV;SVLEN=3589;END=138251018;SUPPORT=4;COVERAGE=5,5,5,4,4;STRAND=+-;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.667	GT:GQ:DR:DV	0/1:8:2:4
+chr4	33098066	Sniffles2.INV.5B3S3	C	<INV>	60	PASS	IMPRECISE;SVTYPE=INV;SVLEN=7007;END=33105073;SUPPORT=4;COVERAGE=4,5,3,1,4;STRAND=+-;STDEV_LEN=82.561;STDEV_POS=3.464;VAF=0.667	GT:GQ:DR:DV	0/1:8:2:4
+chr4	87926012	Sniffles2.INV.5B5S3	T	<INV>	60	PASS	PRECISE;SVTYPE=INV;SVLEN=11536;END=87937548;SUPPORT=4;COVERAGE=3,3,2,3,3;STRAND=+-;STDEV_LEN=0.707;STDEV_POS=0.707;VAF=0.800	GT:GQ:DR:DV	1/1:1:1:4
+chr4	145693877	Sniffles2.INV.5B6S3	G	<INV>	60	PASS	PRECISE;SVTYPE=INV;SVLEN=475;END=145694352;SUPPORT=3;COVERAGE=4,2,2,2,6;STRAND=+-;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.429	GT:GQ:DR:DV	0/1:18:4:3
+chr5	124425518	Sniffles2.INV.3E0S4	A	<INV>	60	PASS	PRECISE;SVTYPE=INV;SVLEN=121173;END=124546691;SUPPORT=3;COVERAGE=6,5,3,3,2;STRAND=+-;STDEV_LEN=1.155;STDEV_POS=5.774;VAF=0.500	GT:GQ:DR:DV	0/1:21:3:3
+chr6	106721331	Sniffles2.INV.3DFS5	G	<INV>	60	PASS	PRECISE;SVTYPE=INV;SVLEN=1674;END=106723005;SUPPORT=5;COVERAGE=5,6,6,6,5;STRAND=+-;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.714	GT:GQ:DR:DV	0/1:6:2:5
+chr7	40839776	Sniffles2.INV.492S6	T	<INV>	60	PASS	PRECISE;SVTYPE=INV;SVLEN=1094;END=40840870;SUPPORT=6;COVERAGE=8,7,7,7,7;STRAND=+-;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.545	GT:GQ:DR:DV	0/1:33:5:6
+chr7	55763050	Sniffles2.INV.493S6	A	<INV>	60	PASS	PRECISE;SVTYPE=INV;SVLEN=255318;END=56018368;SUPPORT=5;COVERAGE=3,7,3,1,8;STRAND=+;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.625	GT:GQ:DR:DV	0/1:16:3:5
+chr7	56021048	Sniffles2.INV.495S6	T	<INV>	53	PASS	PRECISE;SVTYPE=INV;SVLEN=20085960;END=76107008;SUPPORT=5;COVERAGE=8,2,9,4,4;STRAND=-;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.625	GT:GQ:DR:DV	0/1:16:3:5
+chr7	107418983	Sniffles2.INV.496S6	C	<INV>	60	PASS	PRECISE;SVTYPE=INV;SVLEN=3349;END=107422332;SUPPORT=3;COVERAGE=3,3,3,3,3;STRAND=+-;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.600	GT:GQ:DR:DV	0/1:11:2:3
+chr8	6297862	Sniffles2.INV.317S7	G	<INV>	60	PASS	PRECISE;SVTYPE=INV;SVLEN=1906;END=6299768;SUPPORT=4;COVERAGE=5,4,4,4,4;STRAND=+-;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.667	GT:GQ:DR:DV	0/1:8:2:4
+chr9	41006006	Sniffles2.INV.305S8	A	<INV>	41	GT	PRECISE;SVTYPE=INV;SVLEN=217559;END=41223565;SUPPORT=3;COVERAGE=15,11,3,12,7;STRAND=-;STDEV_LEN=2.887;STDEV_POS=2.887;VAF=0.231	GT:GQ:DR:DV	0/1:2:10:3
+chr10	26570666	Sniffles2.INV.405S9	G	<INV>	56	PASS	PRECISE;SVTYPE=INV;SVLEN=746165;END=27316831;SUPPORT=4;COVERAGE=6,8,6,0,6;STRAND=+;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.500	GT:GQ:DR:DV	0/1:28:4:4
+chr11	1915729	Sniffles2.INV.2C2SA	G	<INV>	60	PASS	PRECISE;SVTYPE=INV;SVLEN=23938;END=1939667;SUPPORT=5;COVERAGE=9,2,4,5,1;STRAND=-;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.714	GT:GQ:DR:DV	0/1:6:2:5
+chr12	12391999	Sniffles2.INV.2CBSB	T	<INV>	60	PASS	PRECISE;SVTYPE=INV;SVLEN=1584;END=12393583;SUPPORT=5;COVERAGE=4,5,5,5,5;STRAND=+-;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.833	GT:GQ:DR:DV	1/1:3:1:5
+chr12	13392624	Sniffles2.INV.2CCSB	C	<INV>	60	PASS	PRECISE;SVTYPE=INV;SVLEN=5010;END=13397634;SUPPORT=5;COVERAGE=6,3,5,5,5;STRAND=+-;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.625	GT:GQ:DR:DV	0/1:16:3:5
+chr12	17774389	Sniffles2.INV.2CDSB	C	<INV>	60	PASS	PRECISE;SVTYPE=INV;SVLEN=87173;END=17861562;SUPPORT=3;COVERAGE=4,1,4,6,1;STRAND=-;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.750	GT:GQ:DR:DV	0/1:1:1:3
+chr14	65375943	Sniffles2.INV.1E7SD	T	<INV>	60	PASS	IMPRECISE;SVTYPE=INV;SVLEN=630;END=65376573;SUPPORT=3;COVERAGE=6,2,2,2,5;STRAND=+-;STDEV_LEN=19.923;STDEV_POS=71.591;VAF=0.375	GT:GQ:DR:DV	0/1:16:5:3
+chr16	21583121	Sniffles2.INV.38ASF	C	<INV>	60	PASS	PRECISE;SVTYPE=INV;SVLEN=1116309;END=22699430;SUPPORT=8;COVERAGE=12,5,6,16,7;STRAND=-;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.571	GT:GQ:DR:DV	0/1:37:6:8
+chr16	55798350	Sniffles2.INV.3ADSF	A	<INV>	56	PASS	PRECISE;SVTYPE=INV;SVLEN=308;END=55798658;SUPPORT=4;COVERAGE=7,4,4,4,8;STRAND=+-;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.400	GT:GQ:DR:DV	0/1:23:6:4
+chr16	75204666	Sniffles2.INV.3AESF	C	<INV>	60	PASS	PRECISE;SVTYPE=INV;SVLEN=18094;END=75222760;SUPPORT=7;COVERAGE=7,15,7,5,12;STRAND=+;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.500	GT:GQ:DR:DV	0/1:50:7:7
+chr16	75206200	Sniffles2.INV.3AFSF	G	<INV>	60	PASS	PRECISE;SVTYPE=INV;SVLEN=18094;END=75224294;SUPPORT=4;COVERAGE=14,8,8,12,8;STRAND=-;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.308	GT:GQ:DR:DV	0/1:14:9:4
+chr17	5691379	Sniffles2.INV.2D5S10	C	<INV>	60	PASS	PRECISE;SVTYPE=INV;SVLEN=855;END=5692234;SUPPORT=3;COVERAGE=6,3,3,3,6;STRAND=-;STDEV_LEN=1.155;STDEV_POS=0.577;VAF=0.375	GT:GQ:DR:DV	0/1:16:5:3
+chr17	5691972	Sniffles2.INV.2D6S10	T	<INV>	60	PASS	PRECISE;SVTYPE=INV;SVLEN=275;END=5692247;SUPPORT=3;COVERAGE=3,3,3,3,6;STRAND=+;STDEV_LEN=5.774;STDEV_POS=5.774;VAF=0.500	GT:GQ:DR:DV	0/1:21:3:3
+chr17	21982371	Sniffles2.INV.2D8S10	T	<INV>	41	PASS	PRECISE;SVTYPE=INV;SVLEN=9687;END=21992058;SUPPORT=5;COVERAGE=9,4,4,5,0;STRAND=-;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.455	GT:GQ:DR:DV	0/1:33:6:5
+chr17	43237324	Sniffles2.INV.2D9S10	T	<INV>	58	PASS	PRECISE;SVTYPE=INV;SVLEN=86501;END=43323825;SUPPORT=5;COVERAGE=5,0,10,10,5;STRAND=-;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.714	GT:GQ:DR:DV	0/1:6:2:5
+chr18	12141451	Sniffles2.INV.22FS11	T	<INV>	60	PASS	PRECISE;SVTYPE=INV;SVLEN=5056;END=12146507;SUPPORT=3;COVERAGE=7,12,11,5,11;STRAND=+;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.273	GT:GQ:DR:DV	0/1:7:8:3
+chr18	12145098	Sniffles2.INV.231S11	G	<INV>	60	PASS	PRECISE;SVTYPE=INV;SVLEN=5056;END=12150154;SUPPORT=5;COVERAGE=10,5,11,11,6;STRAND=-;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.500	GT:GQ:DR:DV	0/1:36:5:5
+chr19	21595128	Sniffles2.INV.1F9S12	T	<INV>	53	PASS	PRECISE;SVTYPE=INV;SVLEN=829287;END=22424415;SUPPORT=3;COVERAGE=4,4,2,2,2;STRAND=+;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.600	GT:GQ:DR:DV	0/1:11:2:3
+chr20	28548978	Sniffles2.INV.3A4S13	T	<INV>	60	PASS	PRECISE;SVTYPE=INV;SVLEN=97217;END=28646195;SUPPORT=3;COVERAGE=6,0,12,18,0;STRAND=-;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.375	GT:GQ:DR:DV	0/1:16:5:3
+chr20	29125693	Sniffles2.INV.3A6S13	C	<INV>	60	PASS	PRECISE;SVTYPE=INV;SVLEN=759057;END=29884750;SUPPORT=9;COVERAGE=36,0,17,28,6;STRAND=-;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.360	GT:GQ:DR:DV	0/1:45:16:9
+chr20	29204768	Sniffles2.INV.3A7S13	N	<INV>	56	PASS	PRECISE;SVTYPE=INV;SVLEN=685575;END=29890343;SUPPORT=15;COVERAGE=0,14,5,6,22;STRAND=+;STDEV_LEN=8.378;STDEV_POS=0.000;VAF=0.500	GT:GQ:DR:DV	0/1:60:15:15
+chr20	29261635	Sniffles2.INV.3A8S13	A	<INV>	60	PASS	PRECISE;SVTYPE=INV;SVLEN=623215;END=29884850;SUPPORT=4;COVERAGE=5,23,5,0,9;STRAND=+;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.444	GT:GQ:DR:DV	0/1:26:5:4
+chr22	10784643	Sniffles2.INV.22DS15	C	<INV>	60	PASS	PRECISE;SVTYPE=INV;SVLEN=284344;END=11068987;SUPPORT=18;COVERAGE=19,0,2,22,0;STRAND=-;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.643	GT:GQ:DR:DV	0/1:49:10:18
+chrX	6219008	Sniffles2.INV.264S16	A	<INV>	60	PASS	PRECISE;SVTYPE=INV;SVLEN=1341;END=6220349;SUPPORT=6;COVERAGE=9,7,8,8,10;STRAND=+-;STDEV_LEN=3.286;STDEV_POS=0.000;VAF=0.462	GT:GQ:DR:DV	0/1:40:7:6
+chrX	76146128	Sniffles2.INV.265S16	T	<INV>	60	PASS	PRECISE;SVTYPE=INV;SVLEN=7113;END=76153241;SUPPORT=3;COVERAGE=7,4,6,11,7;STRAND=-;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.333	GT:GQ:DR:DV	0/1:13:6:3

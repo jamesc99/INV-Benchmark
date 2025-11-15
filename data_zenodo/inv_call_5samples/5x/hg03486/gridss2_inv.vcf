@@ -1,0 +1,43 @@
+##fileformat=VCFv4.1
+##fileDate=20240822
+##source=GenerateSVCandidates UNKNOWN
+##reference=file:///stornext/snfs4/next-gen/scratch/ryan/reference/human-grch38.fasta
+##contig=<ID=chr1,length=248956422>
+##contig=<ID=chr2,length=242193529>
+##contig=<ID=chr3,length=198295559>
+##contig=<ID=chr4,length=190214555>
+##contig=<ID=chr5,length=181538259>
+##contig=<ID=chr6,length=170805979>
+##contig=<ID=chr7,length=159345973>
+##contig=<ID=chr8,length=145138636>
+##contig=<ID=chr9,length=138394717>
+##contig=<ID=chr10,length=133797422>
+##contig=<ID=chr11,length=135086622>
+##contig=<ID=chr12,length=133275309>
+##contig=<ID=chr13,length=114364328>
+##contig=<ID=chr14,length=107043718>
+##contig=<ID=chr15,length=101991189>
+##contig=<ID=chr16,length=90338345>
+##contig=<ID=chr17,length=83257441>
+##contig=<ID=chr18,length=80373285>
+##contig=<ID=chr19,length=58617616>
+##contig=<ID=chr20,length=64444167>
+##contig=<ID=chr21,length=46709983>
+##contig=<ID=chr22,length=50818468>
+##contig=<ID=chrX,length=156040895>
+##contig=<ID=chrY,length=57227415>
+##contig=<ID=chrM,length=16569>
+##INFO=<ID=SVTYPE,Number=1,Type=String,Description="Type of structural variant">
+##INFO=<ID=SVLEN,Number=.,Type=Integer,Description="Difference in length between REF and ALT alleles">
+##INFO=<ID=END,Number=1,Type=Integer,Description="End position of the variant described in this record">
+##ALT=<ID=INV,Description="Inversion">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	SAMPLE
+chr1	16725245	gridss2_1	.	<INV>	PASS	.	END=234776441;SVTYPE=INV;SVLEN=218051196	.	.
+chr1	43593625	gridss2_2	.	<INV>	PASS	.	END=43594215;SVTYPE=INV;SVLEN=590	.	.
+chr1	175231431	gridss2_3	.	<INV>	PASS	.	END=175232799;SVTYPE=INV;SVLEN=1368	.	.
+chr1	187495696	gridss2_4	.	<INV>	PASS	.	END=187497595;SVTYPE=INV;SVLEN=1899	.	.
+chr7	40839776	gridss2_5	.	<INV>	PASS	.	END=40840871;SVTYPE=INV;SVLEN=1095	.	.
+chr13	88458715	gridss2_6	.	<INV>	PASS	.	END=88460626;SVTYPE=INV;SVLEN=1911	.	.
+chr16	21583121	gridss2_7	.	<INV>	PASS	.	END=22699430;SVTYPE=INV;SVLEN=1116309	.	.
+chr21	26001844	gridss2_8	.	<INV>	PASS	.	END=26002386;SVTYPE=INV;SVLEN=542	.	.
+chrM	12867	gridss2_9	.	<INV>	PASS	.	END=14977;SVTYPE=INV;SVLEN=2110	.	.

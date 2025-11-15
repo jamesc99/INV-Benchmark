@@ -1,0 +1,54 @@
+##fileformat=VCFv4.3
+##source=SVision v1.9
+##contig=<ID=chr1,length=248956422>
+##contig=<ID=chr2,length=242193529>
+##contig=<ID=chr3,length=198295559>
+##contig=<ID=chr4,length=190214555>
+##contig=<ID=chr5,length=181538259>
+##contig=<ID=chr6,length=170805979>
+##contig=<ID=chr7,length=159345973>
+##contig=<ID=chr8,length=145138636>
+##contig=<ID=chr9,length=138394717>
+##contig=<ID=chr10,length=133797422>
+##contig=<ID=chr11,length=135086622>
+##contig=<ID=chr12,length=133275309>
+##contig=<ID=chr13,length=114364328>
+##contig=<ID=chr14,length=107043718>
+##contig=<ID=chr15,length=101991189>
+##contig=<ID=chr16,length=90338345>
+##contig=<ID=chr17,length=83257441>
+##contig=<ID=chr18,length=80373285>
+##contig=<ID=chr19,length=58617616>
+##contig=<ID=chr20,length=64444167>
+##contig=<ID=chr21,length=46709983>
+##contig=<ID=chr22,length=50818468>
+##contig=<ID=chrX,length=156040895>
+##contig=<ID=chrY,length=57227415>
+##contig=<ID=chrM,length=16569>
+##CHROM=<CHROM=XXX,Description="Chromosome ID">
+##POS=<POS=XXX,Description="Start position of the SV described in this region">
+##ID=<ID=XXX,Description="ID of the SV described in this region">
+##REF=<REF=N,Description="Ref's sequence in that region, default=N">
+##QUAL=<QUAL=XXX,Description="The SV quality of the SV described in this region">
+##ALT=<ID=SV,Description="Simple SVs">
+##ALT=<ID=CSV,Description="Complex or nested SVs">
+##FILTER=<ID=PASS,Description="Passed">
+##FILTER=<ID=POLY,Description="Polymorphic">
+##INFO=<ID=END,Number=1,Type=Integer,Description="End position of the SV described in this region">
+##INFO=<ID=IT,Number=1,Type=String,Description="Inheritype of the whole event ">
+##INFO=<ID=SVLEN,Number=1,Type=Integer,Description="Difference in length between REF and ALT alleles">
+##INFO=<ID=BKPS,Number=.,Type=String,Description="All breakpoints (length-start-end-insert) in this region.">
+##INFO=<ID=BKPSIT,Number=.,Type=String,Description="All breakpoints' inheritype in this region.">
+##INFO=<ID=SVTYPE,Number=1,Type=String,Description="CNN predicted SV type, containing INS, DEL, DUP, tDUP (tandem duplication) and INV">
+##INFO=<ID=SUPPORT,Number=1,Type=Integer,Description="SV support number in this region">
+##INFO=<ID=VAF,Number=1,Type=Float,Description="SV allele frequency in this region">
+##INFO=<ID=RNAMES,Number=.,Type=String,Description="SV support read names in this region">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=DR,Number=1,Type=String,Description="high-quality reference reads">
+##FORMAT=<ID=DV,Number=1,Type=String,Description="high-quality variant reads">
+##INFO=<ID=SIMPLE_SV,Number=1,Type=String,Description="simple type of SV, only INV">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	sorted_hg00733_ont_minimap2_20x.bam
+chr6	106721332	8189	N	SV	.	PASS	END=106723006;SVLEN=1674;SVTYPE=INV;SUPPORT=5;VAF=0.29;BKPS=INV_1674_chr6_106721332_106723006_106721332;RNAMES=08e178f0-a8d2-478e-8c5b-1b6ba7e3531c,3d5a8a92-4770-4e6c-8e1a-f7b72dc63248,ccc97186-bf19-4403-8bda-f3d917281fb8,3c0e3b2a-aa14-4617-bb0b-a03d540bf70e,e115f106-fe84-47e5-a63e-a63770a4b1ec;SIMPLE_SV=INV	GT	0/1
+chr7	107418024	9653	N	CSV	.	PASS	END=107424254;SVLEN=7193;SVTYPE=itDUP+INV+tDUP;SUPPORT=5;VAF=0.34;BKPS=itDUP_960_chr7_107418024_107418983_107418983,INV_5271_chr7_107418983_107424254_107418983,tDUP_962_chr7_107422333_107423294_107423294;RNAMES=857a7b2f-fc7e-467f-bacb-c96649a6a6b4,0ff592af-9a6e-4a5a-9d71-e27de47e937c,619e35b9-4b7b-463a-bed2-ca9706e3b0c8,d9faebec-24d4-46f3-9459-cd8e9be4ee92,06b26ca9-ad63-4514-8675-73c9500ee3f7;SIMPLE_SV=INV	GT	0/1
+chr11	49711872	13737	N	CSV	.	PASS	END=49734301;SVLEN=25412;SVTYPE=itDUP+INV+tDUP;SUPPORT=5;VAF=0.34;BKPS=itDUP_2977_chr11_49711872_49714846_49714846,INV_19455_chr11_49714846_49734301_49714846,tDUP_2980_chr11_49728345_49731324_49731324;RNAMES=f193178f-bd02-453a-a929-e85278025a0b,ffca0fef-1db2-4da1-96c4-8e1cff10f344,eb6f5375-6a7e-4dcb-95fc-5e41fa496e4f,a834ee3b-542d-41d8-a304-cbebf73ef75b,c5511dca-7cc1-42e3-8b6f-78f37ff19d93;SIMPLE_SV=INV	GT	0/1
+chrX	101597480	23503	N	CSV	.	PASS	END=101621020;SVLEN=28248;SVTYPE=itDUP+INV+tDUP;SUPPORT=5;VAF=0.39;BKPS=itDUP_4714_chrX_101597480_101602193_101602193,INV_18827_chrX_101602193_101621020_101602193,tDUP_4707_chrX_101611600_101616306_101616306;RNAMES=74c7a28c-db17-447f-aaf6-fce0a5aacae2,ed2684c3-f3a4-4b49-a596-8b8dfa38df52,f0dae012-3068-4626-8ed5-f2a015b0ef5a,20843027-13dc-4c43-b670-78b8dadbd39a,401fdb23-87ba-41a4-82ce-7f3368e4c29c;SIMPLE_SV=INV	GT	0/1

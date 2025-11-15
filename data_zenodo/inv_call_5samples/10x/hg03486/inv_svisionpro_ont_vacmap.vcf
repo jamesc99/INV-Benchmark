@@ -1,0 +1,61 @@
+##fileformat=VCFv4.3
+##FILTER=<ID=PASS,Description="All filters passed">
+##source=SVision v1.9
+##contig=<ID=chr1,length=248956422>
+##contig=<ID=chr2,length=242193529>
+##contig=<ID=chr3,length=198295559>
+##contig=<ID=chr4,length=190214555>
+##contig=<ID=chr5,length=181538259>
+##contig=<ID=chr6,length=170805979>
+##contig=<ID=chr7,length=159345973>
+##contig=<ID=chr8,length=145138636>
+##contig=<ID=chr9,length=138394717>
+##contig=<ID=chr10,length=133797422>
+##contig=<ID=chr11,length=135086622>
+##contig=<ID=chr12,length=133275309>
+##contig=<ID=chr13,length=114364328>
+##contig=<ID=chr14,length=107043718>
+##contig=<ID=chr15,length=101991189>
+##contig=<ID=chr16,length=90338345>
+##contig=<ID=chr17,length=83257441>
+##contig=<ID=chr18,length=80373285>
+##contig=<ID=chr19,length=58617616>
+##contig=<ID=chr20,length=64444167>
+##contig=<ID=chr21,length=46709983>
+##contig=<ID=chr22,length=50818468>
+##contig=<ID=chrX,length=156040895>
+##contig=<ID=chrY,length=57227415>
+##contig=<ID=chrM,length=16569>
+##CHROM=<CHROM=XXX,Description="Chromosome ID">
+##POS=<POS=XXX,Description="Start position of the SV described in this region">
+##ID=<ID=XXX,Description="ID of the SV described in this region">
+##REF=<REF=N,Description="Ref's sequence in that region, default=N">
+##QUAL=<QUAL=XXX,Description="The SV quality of the SV described in this region">
+##ALT=<ID=SV,Description="Simple SVs">
+##ALT=<ID=CSV,Description="Complex or nested SVs">
+##FILTER=<ID=POLY,Description="Polymorphic">
+##INFO=<ID=END,Number=1,Type=Integer,Description="End position of the SV described in this region">
+##INFO=<ID=IT,Number=1,Type=String,Description="Inheritype of the whole event">
+##INFO=<ID=SVLEN,Number=1,Type=Integer,Description="Difference in length between REF and ALT alleles">
+##INFO=<ID=BKPS,Number=.,Type=String,Description="All breakpoints (length-start-end-insert) in this region.">
+##INFO=<ID=BKPSIT,Number=.,Type=String,Description="All breakpoints' inheritype in this region.">
+##INFO=<ID=SVTYPE,Number=1,Type=String,Description="CNN predicted SV type, containing INS, DEL, DUP, tDUP (tandem duplication) and INV">
+##INFO=<ID=SUPPORT,Number=1,Type=Integer,Description="SV support number in this region">
+##INFO=<ID=VAF,Number=1,Type=Float,Description="SV allele frequency in this region">
+##INFO=<ID=RNAMES,Number=.,Type=String,Description="SV support read names in this region">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=DR,Number=1,Type=String,Description="high-quality reference reads">
+##FORMAT=<ID=DV,Number=1,Type=String,Description="high-quality variant reads">
+##INFO=<ID=SIMPLE_SV,Number=1,Type=String,Description="simple type of SV, only INV">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	hg03486_ont_vacmap_10x_sorted.bam
+chr1	92796732	221	N	SV	.	PASS	END=92796800;SVLEN=68;SVTYPE=INV;SUPPORT=6;VAF=1;BKPS=INV_68_chr1_92796732_92796800_92796732;RNAMES=07c3ff3b-822d-42e3-9e56-4571d42bd1c2,105d1bec-b0c9-4e63-a540-cd292e0e55e2,43a139fd-5a89-40d6-8c3b-8f4ca3ec8b7f,7442c01f-cd71-427b-9eec-584c2b96c4b8,91eaf5d2-5b77-4d72-b889-e630c207d8bc,84edbbb1-5405-4eba-b70c-603a5f81ebaa;SIMPLE_SV=INV	GT	1/1
+chr7	40839777	2986	N	SV	.	PASS	END=40840872;SVLEN=1095;SVTYPE=INV;SUPPORT=6;VAF=0.6;BKPS=INV_1095_chr7_40839777_40840872_40839777;RNAMES=01b9342b-d197-4ef2-a787-42a15c618898,6c24d5b4-11ce-405c-98a4-84cf07845e18,5c68693a-4126-4c13-9bd0-db6d6aa08db6,82b5cb73-39ef-4096-855a-dc2ab1f7c079,5af30f11-262e-4bb2-bebd-ae4be1d9d336,b73175db-ae33-4bd4-b722-d1b9c41021c3;SIMPLE_SV=INV	GT	0/1
+chr8	6297764	3425	N	SV	.	PASS	END=6299868;SVLEN=2104;SVTYPE=INV;SUPPORT=5;VAF=0.56;BKPS=INV_2104_chr8_6297764_6299868_6297764;RNAMES=2cce7dee-a86e-4363-b103-9bdb90123a3a,b6c0e702-7bea-42fd-894f-e8b0c2bf105a,469ff316-4ac8-429f-a7c0-9b7863587e33,02cd65a7-6242-45fa-93a3-ea1eb0b8438c,0dbef5ec-83e4-4aa9-815f-b1eac030be58;SIMPLE_SV=INV	GT	0/1
+chr8	106021859	3636	N	CSV	.	PASS	END=106022241;SVLEN=6283;SVTYPE=INS+INV+INS;SUPPORT=7;VAF=0.93;BKPS=INS_3318_chr8_106021859_106021859_106021859,INV_382_chr8_106021859_106022241_106021859,INS_2583_chr8_106022236_106022236_106022236;RNAMES=b5310b26-59f7-4ae0-96f0-5b7ba2d46ffc,d916dfcb-17eb-42ed-8d54-249384fbc144,19311766-41cb-4075-a9fb-5a980592bab4,d21d772e-b525-4c35-8484-5ddf0de6f7d2,1db6b144-3e73-42b3-bf5b-80f75a69730d,023832d2-33fa-47c7-821d-e96ad3e4c3a7,8a063b8a-3d24-4029-8459-edb06e281b31;SIMPLE_SV=INV	GT	1/1
+chr9	74283224	3874	N	CSV	.	PASS	END=74283479;SVLEN=1804;SVTYPE=INS+INV+INS;SUPPORT=7;VAF=1;BKPS=INS_1227_chr9_74283224_74283224_74283224,INV_255_chr9_74283224_74283479_74283224,INS_322_chr9_74283477_74283477_74283477;RNAMES=616329f8-e877-49a0-8cab-8812c62087ea,06bddb4e-49b8-415a-b01e-7dab83c8ba4d,46a100a5-bd04-4f5b-9811-fc3dfc1b126c,189da26f-3806-4b63-a9f8-a644a04b4ef4,8c8185cd-3c70-4ace-a2e1-692ba0183a51,511f767e-8188-4a50-bc91-f10ef2ae5046,fd375690-7fc2-4f4e-bb66-02517fa90c6c;SIMPLE_SV=INV	GT	1/1
+chr12	12391946	4749	N	SV	.	PASS	END=12393687;SVLEN=1741;SVTYPE=INV;SUPPORT=7;VAF=1;BKPS=INV_1741_chr12_12391946_12393687_12391946;RNAMES=827d3d82-7759-4c60-b8f8-664ca91d46d1,0193160b-2d78-4159-b869-3b41df02d905,3b497e7f-5cb9-4129-a53d-874ff4dc0450,94ab4709-49cd-406b-92d4-9d74917e6541,d7870d94-c5e9-47bf-a4ab-d49167ea1a6b,d741075f-1be1-4062-b0b6-0bcb8c4d310b,be2eaf09-fb63-4e74-acba-942822a12a4e;SIMPLE_SV=INV	GT	1/1
+chr12	13392305	4752	N	SV	.	PASS	END=13397973;SVLEN=5668;SVTYPE=INV;SUPPORT=6;VAF=0.75;BKPS=INV_5668_chr12_13392305_13397973_13392305;RNAMES=45e63eba-52fa-4caa-b4db-61e8ac05d70c,1110b87b-0a69-491d-85c4-fae6dfbb4b82,8c9c4762-903a-4fcf-9f65-1dcf3948cf94,4d4c07a9-5518-49db-bed9-a039e767f6a2,fe68dd36-062b-4a2a-977b-dd6f18be591a,79a97d83-be83-4d2b-be1f-3e35565ef3db;SIMPLE_SV=INV	GT	0/1
+chr13	81782744	5154	N	SV	.	PASS	END=81782829;SVLEN=85;SVTYPE=INV;SUPPORT=5;VAF=1;BKPS=INV_85_chr13_81782744_81782829_81782744;RNAMES=8b89bee2-72cb-4ee3-b599-464546113ac2,1233600c-bfaa-449c-abe0-ed87203e04a5,b168c31c-74fa-491c-adc1-5756844a0103,a57399d6-fb5d-46a8-ac8d-d4daaa406e5c,4562837a-5cf9-4a16-be85-974742d8897c;SIMPLE_SV=INV	GT	1/1
+chr16	48616907	5796	N	CSV	.	PASS	END=48617468;SVLEN=562;SVTYPE=itDUP+INV;SUPPORT=5;VAF=0.56;BKPS=itDUP_58_chr16_48616907_48616964_48616964,INV_504_chr16_48616964_48617468_48616964;RNAMES=ab9398a4-7b52-40be-8589-52349ecea971,486bf540-30a9-4473-8d4a-55f1bab31ae2,105ecbcb-e398-4729-9b35-17036ce28f6e,bb051a65-1fd4-44de-a4a0-e7b29626e9ea,ae2bad7b-2ca4-43cb-92a4-3c48e7e82382;SIMPLE_SV=INV	GT	0/1
+chr17	1195652	5956	N	CSV	.	PASS	END=1199647;SVLEN=3995;SVTYPE=DEL+INV+DEL;SUPPORT=5;VAF=0.42;BKPS=DEL_598_chr17_1195652_1196250_1195652,INV_615_chr17_1196250_1196865_1196250,DEL_2782_chr17_1196865_1199647_1196865;RNAMES=4ac550ca-fb24-4845-a721-7cc31d8248f4,67217a6e-fdf5-4b8b-88a7-1682e00c79b1,35d1419f-6fd8-42b8-8ba7-a940f5398f87,14a722ac-2a02-45b4-b78f-bb556ee36233,4f9efef3-03fc-427b-9d99-bd2a7ca06541;SIMPLE_SV=INV	GT	0/1
+chr21	26001844	6986	N	SV	.	PASS	END=26002392;SVLEN=548;SVTYPE=INV;SUPPORT=8;VAF=0.89;BKPS=INV_548_chr21_26001844_26002392_26001844;RNAMES=a6078534-5080-4be5-a16b-4ffffc8035ff,e2ebd86b-809d-40ad-a911-a7d982d08435,3980922f-9b87-494f-b9d6-f63f97c98c0c,29ea008b-8f42-4587-929b-28aeb148a453,61ca0977-25dd-49ed-976b-0fc4db0c960a,52b38fc7-f659-489a-8083-33a514e75f65,cd4c544c-02dd-4102-93b0-1b657ef807f0,becfee52-2f1a-40f0-b918-dc893a9008e9;SIMPLE_SV=INV	GT	1/1

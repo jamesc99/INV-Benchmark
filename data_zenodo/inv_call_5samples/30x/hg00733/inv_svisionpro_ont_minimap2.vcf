@@ -1,0 +1,57 @@
+##fileformat=VCFv4.3
+##source=SVision v1.8
+##contig=<ID=chr1,length=248956422>
+##contig=<ID=chr2,length=242193529>
+##contig=<ID=chr3,length=198295559>
+##contig=<ID=chr4,length=190214555>
+##contig=<ID=chr5,length=181538259>
+##contig=<ID=chr6,length=170805979>
+##contig=<ID=chr7,length=159345973>
+##contig=<ID=chr8,length=145138636>
+##contig=<ID=chr9,length=138394717>
+##contig=<ID=chr10,length=133797422>
+##contig=<ID=chr11,length=135086622>
+##contig=<ID=chr12,length=133275309>
+##contig=<ID=chr13,length=114364328>
+##contig=<ID=chr14,length=107043718>
+##contig=<ID=chr15,length=101991189>
+##contig=<ID=chr16,length=90338345>
+##contig=<ID=chr17,length=83257441>
+##contig=<ID=chr18,length=80373285>
+##contig=<ID=chr19,length=58617616>
+##contig=<ID=chr20,length=64444167>
+##contig=<ID=chr21,length=46709983>
+##contig=<ID=chr22,length=50818468>
+##contig=<ID=chrX,length=156040895>
+##contig=<ID=chrY,length=57227415>
+##contig=<ID=chrM,length=16569>
+##CHROM=<CHROM=XXX,Description="Chromosome ID">
+##POS=<POS=XXX,Description="Start position of the SV described in this region">
+##ID=<ID=XXX,Description="ID of the SV described in this region">
+##REF=<REF=N,Description="Ref's sequence in that region, default=N">
+##QUAL=<QUAL=XXX,Description="The SV quality of the SV described in this region">
+##ALT=<ID=SV,Description="Simple SVs">
+##ALT=<ID=CSV,Description="Complex or nested SVs">
+##FILTER=<ID=PASS,Description="Passed">
+##FILTER=<ID=POLY,Description="Polymorphic">
+##INFO=<ID=END,Number=1,Type=Integer,Description="End position of the SV described in this region">
+##INFO=<ID=IT,Number=1,Type=String,Description="Inheritype of the whole event ">
+##INFO=<ID=SVLEN,Number=1,Type=Integer,Description="Difference in length between REF and ALT alleles">
+##INFO=<ID=BKPS,Number=.,Type=String,Description="All breakpoints (length-start-end-insert) in this region.">
+##INFO=<ID=BKPSIT,Number=.,Type=String,Description="All breakpoints' inheritype in this region.">
+##INFO=<ID=SVTYPE,Number=1,Type=String,Description="CNN predicted SV type, containing INS, DEL, DUP, tDUP (tandem duplication) and INV">
+##INFO=<ID=SUPPORT,Number=1,Type=Integer,Description="SV support number in this region">
+##INFO=<ID=VAF,Number=1,Type=Float,Description="SV allele frequency in this region">
+##INFO=<ID=RNAMES,Number=.,Type=String,Description="SV support read names in this region">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=DR,Number=1,Type=String,Description="high-quality reference reads">
+##FORMAT=<ID=DV,Number=1,Type=String,Description="high-quality variant reads">
+##INFO=<ID=SIMPLE_SV,Number=1,Type=String,Description="simple type of SV, only INV">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	sorted_HG00733_ONT_minimap2_30x.bam
+chr2	138246675	3019	N	CSV	.	PASS	END=138252529;SVLEN=6611;SVTYPE=itDUP+INV+tDUP;SUPPORT=5;VAF=0.2;BKPS=itDUP_755_chr2_138246675_138247429_138247429,INV_5100_chr2_138247429_138252529_138247429,tDUP_756_chr2_138251019_138251774_138251774;RNAMES=336fc5ae-13a4-4b2f-a369-75ba0982ffa8,b97343b4-49ba-4627-a34f-4cff06163bed,2cb399dd-e3af-4d91-96fd-9c6c30418ee4,1ac0b18c-e4ba-4e50-a0f0-bf3b97128a9b,5d7e7867-4677-4c25-8907-41ad71279d2c;SIMPLE_SV=INV	GT	0/1
+chr6	106721332	9317	N	SV	.	PASS	END=106723006;SVLEN=1674;SVTYPE=INV;SUPPORT=7;VAF=0.3;BKPS=INV_1674_chr6_106721332_106723006_106721332;RNAMES=3d5a8a92-4770-4e6c-8e1a-f7b72dc63248,3c0e3b2a-aa14-4617-bb0b-a03d540bf70e,0475f943-079d-49e0-a8bc-9f1e94eddc23,ccc97186-bf19-4403-8bda-f3d917281fb8,08e178f0-a8d2-478e-8c5b-1b6ba7e3531c,f965a2b4-6f8a-4d44-9ea2-7f3417b14bec,e115f106-fe84-47e5-a63e-a63770a4b1ec;SIMPLE_SV=INV	GT	0/1
+chr7	107418024	10994	N	CSV	.	PASS	END=107424254;SVLEN=7193;SVTYPE=itDUP+INV+tDUP;SUPPORT=7;VAF=0.37;BKPS=itDUP_960_chr7_107418024_107418983_107418983,INV_5271_chr7_107418983_107424254_107418983,tDUP_962_chr7_107422333_107423294_107423294;RNAMES=857a7b2f-fc7e-467f-bacb-c96649a6a6b4,40538ffb-299d-4d05-a8e5-163494c1f710,619e35b9-4b7b-463a-bed2-ca9706e3b0c8,0ff592af-9a6e-4a5a-9d71-e27de47e937c,d9faebec-24d4-46f3-9459-cd8e9be4ee92,06b26ca9-ad63-4514-8675-73c9500ee3f7,1e864b98-165e-4691-81a3-70f9fa433742;SIMPLE_SV=INV	GT	0/1
+chr11	49711872	15740	N	CSV	.	PASS	END=49734301;SVLEN=25410;SVTYPE=itDUP+INV+tDUP;SUPPORT=7;VAF=0.32;BKPS=itDUP_2975_chr11_49711872_49714846_49714846,INV_19455_chr11_49714846_49734301_49714846,tDUP_2980_chr11_49728345_49731324_49731324;RNAMES=5273f2bc-b9a3-4b89-a9d9-c8ff78411c0e,eb6f5375-6a7e-4dcb-95fc-5e41fa496e4f,a834ee3b-542d-41d8-a304-cbebf73ef75b,c5511dca-7cc1-42e3-8b6f-78f37ff19d93,f193178f-bd02-453a-a929-e85278025a0b,ffca0fef-1db2-4da1-96c4-8e1cff10f344,00bfbbf8-bcf4-407f-a95c-2bbe17c1a4b7;SIMPLE_SV=INV	GT	0/1
+chr12	86845556	17058	N	CSV	.	PASS	END=86861627;SVLEN=17650;SVTYPE=itDUP+INV+tDUP;SUPPORT=6;VAF=0.23;BKPS=itDUP_1575_chr12_86845556_86847130_86847130,INV_14497_chr12_86847130_86861627_86847130,tDUP_1578_chr12_86858475_86860052_86860052;RNAMES=c80ad691-3dfd-4abb-b140-f7dbbfa3e531,c05bc91c-0ce2-4ae7-89b6-4ca3b59ef7c6,b9277b4e-cfa9-4fde-a72b-3d005f935ec1,2beb4bb3-eb34-4d3d-b34c-ed9f394ad4ca,b1c0852f-bd1a-4004-8749-1f1764cce1ed,b9cce032-f976-43e9-969a-f8a9d550caad;SIMPLE_SV=INV	GT	0/1
+chr21	40022865	25131	N	CSV	.	PASS	END=40045166;SVLEN=28309;SVTYPE=itDUP+INV+tDUP;SUPPORT=6;VAF=0.33;BKPS=itDUP_5978_chr21_40022865_40028842_40028842,INV_16324_chr21_40028842_40045166_40028842,tDUP_6007_chr21_40033182_40039188_40039188;RNAMES=75ee9fae-fed3-4c5a-a9b7-46018ed13e85,3e2213c8-23e5-4880-8f1e-612e24e8c7cc,de345f24-8b12-48bb-af40-86a65332333d,fe75b43b-83e8-421f-bb66-071558d4f617,8cd6a941-5011-48f4-8160-ef69a37a6db4,e52f0218-72c8-473f-afaa-509c3771e97f;SIMPLE_SV=INV	GT	0/1
+chrX	101597480	26943	N	CSV	.	PASS	END=101621020;SVLEN=28248;SVTYPE=itDUP+INV+tDUP;SUPPORT=5;VAF=0.28;BKPS=itDUP_4714_chrX_101597480_101602193_101602193,INV_18827_chrX_101602193_101621020_101602193,tDUP_4707_chrX_101611600_101616306_101616306;RNAMES=20843027-13dc-4c43-b670-78b8dadbd39a,401fdb23-87ba-41a4-82ce-7f3368e4c29c,f0dae012-3068-4626-8ed5-f2a015b0ef5a,ed2684c3-f3a4-4b49-a596-8b8dfa38df52,74c7a28c-db17-447f-aaf6-fce0a5aacae2;SIMPLE_SV=INV	GT	0/1

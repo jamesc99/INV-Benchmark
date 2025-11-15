@@ -1,0 +1,64 @@
+##fileformat=VCFv4.2
+##source=cuteSV-2.1.1
+##fileDate=2025-11-12 15:06:28 3-CST
+##contig=<ID=chr1,length=248956422>
+##contig=<ID=chr2,length=242193529>
+##contig=<ID=chr3,length=198295559>
+##contig=<ID=chr4,length=190214555>
+##contig=<ID=chr5,length=181538259>
+##contig=<ID=chr6,length=170805979>
+##contig=<ID=chr7,length=159345973>
+##contig=<ID=chr8,length=145138636>
+##contig=<ID=chr9,length=138394717>
+##contig=<ID=chr10,length=133797422>
+##contig=<ID=chr11,length=135086622>
+##contig=<ID=chr12,length=133275309>
+##contig=<ID=chr13,length=114364328>
+##contig=<ID=chr14,length=107043718>
+##contig=<ID=chr15,length=101991189>
+##contig=<ID=chr16,length=90338345>
+##contig=<ID=chr17,length=83257441>
+##contig=<ID=chr18,length=80373285>
+##contig=<ID=chr19,length=58617616>
+##contig=<ID=chr20,length=64444167>
+##contig=<ID=chr21,length=46709983>
+##contig=<ID=chr22,length=50818468>
+##contig=<ID=chrX,length=156040895>
+##contig=<ID=chrY,length=57227415>
+##contig=<ID=chrM,length=16569>
+##ALT=<ID=INS,Description="Insertion of novel sequence relative to the reference">
+##ALT=<ID=DEL,Description="Deletion relative to the reference">
+##ALT=<ID=DUP,Description="Region of elevated copy number relative to the reference">
+##ALT=<ID=INV,Description="Inversion of reference sequence">
+##ALT=<ID=BND,Description="Breakend of translocation">
+##INFO=<ID=PRECISE,Number=0,Type=Flag,Description="Precise structural variant">
+##INFO=<ID=IMPRECISE,Number=0,Type=Flag,Description="Imprecise structural variant">
+##INFO=<ID=SVTYPE,Number=1,Type=String,Description="Type of structural variant">
+##INFO=<ID=SVLEN,Number=1,Type=Integer,Description="Difference in length between REF and ALT alleles">
+##INFO=<ID=CHR2,Number=1,Type=String,Description="Chromosome for END coordinate in case of a translocation">
+##INFO=<ID=END,Number=1,Type=Integer,Description="End position of the variant described in this record">
+##INFO=<ID=CIPOS,Number=2,Type=Integer,Description="Confidence interval around POS for imprecise variants">
+##INFO=<ID=CILEN,Number=2,Type=Integer,Description="Confidence interval around inserted/deleted material between breakends">
+##INFO=<ID=RE,Number=1,Type=Integer,Description="Number of read support this record">
+##INFO=<ID=STRAND,Number=A,Type=String,Description="Strand orientation of the adjacency in BEDPE format (DEL:+-, DUP:-+, INV:++/--)">
+##INFO=<ID=RNAMES,Number=.,Type=String,Description="Supporting read names of SVs (comma separated)">
+##INFO=<ID=AF,Number=A,Type=Float,Description="Allele Frequency.">
+##FILTER=<ID=q5,Description="Quality below 5">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=DR,Number=1,Type=Integer,Description="# High-quality reference reads">
+##FORMAT=<ID=DV,Number=1,Type=Integer,Description="# High-quality variant reads">
+##FORMAT=<ID=PL,Number=G,Type=Integer,Description="# Phred-scaled genotype likelihoods rounded to the closest integer">
+##FORMAT=<ID=GQ,Number=1,Type=Integer,Description="# Genotype quality">
+##CommandLine="cuteSV --max_cluster_bias_INS 100 --diff_ratio_merging_INS 0.3 --max_cluster_bias_DEL 100 --diff_ratio_merging_DEL 0.3 --genotype --min_mapq 20 /users/u250191/ryan_scratch_ln/benchmark_inv/rawdata/new_hg002_ont_pb/different_coverage/10x/ont_minimap2/hg002_ont_minimap2_10x_sorted.bam /users/u250191/ryan_scratch_ln/reference/human-grch38.fasta 989545.vcf /users/u250191/ryan_scratch_ln/benchmark_inv/round2_analysis_251111/different_coverage/caller/10x/hg002/cuteSV2/ont_minimap2 --threads 8"
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	NULL
+chr11	49711871	cuteSV.INV.0	T	<INV>	43.7	PASS	PRECISE;SVTYPE=INV;SVLEN=16326;END=49728197;RE=11;STRAND=--;RNAMES=NULL;AF=0.4583	GT:DR:DV:PL:GQ	0/1:13:11:44,0,63:43
+chr16	29226834	cuteSV.INV.1	C	<INV>	95.4	PASS	PRECISE;SVTYPE=INV;SVLEN=508;END=29227342;RE=10;STRAND=--;RNAMES=NULL;AF=1.0	GT:DR:DV:PL:GQ	1/1:0:10:95,26,0:25
+chr16	46380684	cuteSV.INV.2	A	<INV>	88.5	PASS	PRECISE;SVTYPE=INV;SVLEN=1874;END=46382558;RE=14;STRAND=--;RNAMES=NULL;AF=0.7368	GT:DR:DV:PL:GQ	1/1:5:14:89,3,3:3
+chr21	26001845	cuteSV.INV.3	C	<INV>	124.1	PASS	PRECISE;SVTYPE=INV;SVLEN=541;END=26002386;RE=13;STRAND=++;RNAMES=NULL;AF=1.0	GT:DR:DV:PL:GQ	1/1:0:13:124,33,0:33
+chr21	26001845	cuteSV.INV.4	C	<INV>	124.1	PASS	PRECISE;SVTYPE=INV;SVLEN=541;END=26002386;RE=13;STRAND=--;RNAMES=NULL;AF=1.0	GT:DR:DV:PL:GQ	1/1:0:13:124,33,0:33
+chr21	26648349	cuteSV.INV.5	G	<INV>	114.5	PASS	PRECISE;SVTYPE=INV;SVLEN=1058;END=26649407;RE=12;STRAND=--;RNAMES=NULL;AF=1.0	GT:DR:DV:PL:GQ	1/1:0:12:115,31,0:30
+chr21	26648369	cuteSV.INV.6	T	<INV>	105.0	PASS	PRECISE;SVTYPE=INV;SVLEN=941;END=26649310;RE=11;STRAND=++;RNAMES=NULL;AF=1.0	GT:DR:DV:PL:GQ	1/1:0:11:105,28,0:28
+chr3	44699740	cuteSV.INV.7	C	<INV>	114.5	PASS	PRECISE;SVTYPE=INV;SVLEN=860;END=44700600;RE=12;STRAND=++;RNAMES=NULL;AF=1.0	GT:DR:DV:PL:GQ	1/1:0:12:115,31,0:30
+chr3	44699741	cuteSV.INV.8	A	<INV>	95.4	PASS	PRECISE;SVTYPE=INV;SVLEN=816;END=44700557;RE=10;STRAND=--;RNAMES=NULL;AF=1.0	GT:DR:DV:PL:GQ	1/1:0:10:95,26,0:25
+chr7	70955984	cuteSV.INV.9	T	<INV>	105.0	PASS	PRECISE;SVTYPE=INV;SVLEN=17919;END=70973903;RE=11;STRAND=++;RNAMES=NULL;AF=1.0	GT:DR:DV:PL:GQ	1/1:0:11:105,28,0:28
+chr8	6297864	cuteSV.INV.10	G	<INV>	105.0	PASS	PRECISE;SVTYPE=INV;SVLEN=1915;END=6299779;RE=11;STRAND=--;RNAMES=NULL;AF=1.0	GT:DR:DV:PL:GQ	1/1:0:11:105,28,0:28
