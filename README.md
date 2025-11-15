@@ -7,6 +7,35 @@ There are two main components in this repository: inversion benchmark assembly p
 ## Data Availability
 All VCF files used in this benchmark were uploaded to: zenodo link here.
 
+## Data Structure
+```
+.
+├── assembly_pipeline
+│   ├── raw_strandseq_bed
+│   ├── repeats_annotation
+│   └── script
+├── benchmark_pipeline
+│   ├── aligner
+│   ├── caller
+│   └── truvari
+└── data_zenodo
+    ├── bed
+    ├── inv_call_5samples
+    │   ├── 10x
+    │   │   ├── hg002
+    │   │   ├── hg00733
+    │   │   ├── hg02818
+    │   │   ├── hg03486
+    │   │   └── na19240
+    │   ├── 20x
+    │   │   ├── ...
+    │   ├── 30x
+    │   │   ├── ...
+    │   └── 5x
+    │       ├── ...
+    └── truvari_ref_vcf
+```
+
 ## Assembly-based INV set generation pipeline
 
 **minimap2_asm.sh/vacmap_asm.sh**
