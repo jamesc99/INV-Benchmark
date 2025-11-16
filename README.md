@@ -4,8 +4,6 @@ The repository contains scripts and documentation for building and assessing the
 
 There are two main components in this repository: inversion benchmark assembly pipeline and performance benchmark pipeline.
 
-## Data Availability
-All VCF files used in this benchmark were uploaded to: zenodo link here.
 
 ## Data Structure
 ```
@@ -142,6 +140,9 @@ ${Ref_name}_${base_name}: Folder contains Truvari bench output
 
 ## Publication
 Check out the preprint [here]().
+
+## Data Availability
+All VCF files used in this benchmark were uploaded to: [zenodo link here.](https://zenodo.org/records/17624133)
 
 
 
