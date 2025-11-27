@@ -119,37 +119,7 @@ ${Ref_name}_${base_name}: Folder contains Truvari bench output
 Check out the preprint [here]().
 
 ## Data Availability
-All VCF files used in this benchmark were uploaded to: [zenodo link here.](https://zenodo.org/records/17624133)
-
-
-## Data Structure
-```
-.
-├── assembly_pipeline
-│   ├── raw_strandseq_bed
-│   ├── repeats_annotation
-│   └── script
-├── benchmark_pipeline
-│   ├── aligner
-│   ├── caller
-│   └── truvari
-└── data_zenodo
-    ├── bed
-    ├── inv_call_5samples
-    │   ├── 10x
-    │   │   ├── hg002
-    │   │   ├── hg00733
-    │   │   ├── hg02818
-    │   │   ├── hg03486
-    │   │   └── na19240
-    │   ├── 20x
-    │   │   ├── ...
-    │   ├── 30x
-    │   │   ├── ...
-    │   └── 5x
-    │       ├── ...
-    └── truvari_ref_vcf
-```
+VCF files used in this benchmark were uploaded to: [zenodo link here.](https://zenodo.org/records/17624133)
 
 
 
