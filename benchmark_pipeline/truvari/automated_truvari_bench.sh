@@ -94,6 +94,8 @@ for ref_vcf in $(ls $ref_dir/*.vcf.gz); do
         echo "WARNING: truvari bench failed to create output directory for $base_name. Skipping deviation calculation."
     fi
 
+    python cal_tier_specific_stats.py ./ $ref_name --output ${ref_name}_tier_stats.json
+
     echo "Finished running truvari bench for $ref_vcf against $input_vcf."
 
 done
