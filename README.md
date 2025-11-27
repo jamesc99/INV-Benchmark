@@ -10,6 +10,38 @@ There are two main components in this repository:
 
 ## 1. Run INV calling results on the benchmark dataset
 
+**Run VCF file on benchmark set**
+Description:
+Run INV calling results on the benchmark dataset.
+```
+Environment requirements:
+Truvari v5.2.0+; bgzip and tabix
+
+Command:
+bash benchmark_pipeline/truvari/automated_truvari_bench.sh   \
+   input_vcf_path        # The path to the VCF file to be benchmarked   \
+   ref_name              # The name of the reference sample (e.g., HG002)   \
+   zenodo_ref_base_dir   # The local path to the downloaded /data_zenodo/truvari_ref_vcf/
+
+Outputs:
+Truvari bench output folder, you can check the stats in summary.json file
+
+Example:
+If you have:
+   A VCF file from Sniffles2 containing only INV called on HG002 sample
+   The path of zenodo_ref_base_dir is /User/INV-Benchmark/data_zenodo/truvari_ref_vcf/
+   You have downloaded the github repo to /User/INV-Benchmark/
+
+Then the command should be:
+bash /User/INV-Benchmark/benchmark_pipeline/truvari/automated_truvari_bench.sh \
+   sniffles2.inv_only.vcf   \
+   HG002   \
+   /User/INV-Benchmark/data_zenodo/truvari_ref_vcf/
+```
+
+**Calculate Tier-specific Recall/Pricision/F1**
+Tier-specific stats (Recall/Precision/F1) will be in the ${ref_name}_tier_stats.json file
+
 
 ## 2.1 Assembly-based INV set generation pipeline
 
