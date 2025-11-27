@@ -2,10 +2,16 @@
 
 The repository contains scripts and documentation for building and assessing the inversions benchmark set. It includes the script to build benchmark inversion set, and the benchmarking process with seven SV callers on five samples (HG002, HG00733, HG02818, HG03486, NA19240).
 
-There are two main components in this repository: inversion benchmark assembly pipeline and performance benchmark pipeline.
+There are two main components in this repository: 
+1. How to run your inversion calling results (VCF file) on this benchmark set
+2. Scripts to implement the manuscript
+   2.1 Inversion benchmark assembly pipeline details
+   2.2 Performance benchmark pipeline
+
+## 1. Run INV calling results on the benchmark dataset
 
 
-## Assembly-based INV set generation pipeline
+## 2.1 Assembly-based INV set generation pipeline
 
 **minimap2_asm.sh/vacmap_asm.sh**
 
@@ -47,7 +53,7 @@ Aligner Comparison Table: A comparison matrix showing how the two aligners agree
 ```
 
 
-## Benchmarking pipeline
+## 2.2 Benchmarking pipeline
 
 ### Step1: Aligner
 **minimap2_alignment.sh**
