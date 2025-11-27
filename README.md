@@ -11,6 +11,7 @@ There are two main components in this repository:
 ## 1. Run INV calling results on the benchmark dataset
 
 **Run VCF file on benchmark set**
+
 Description:
 Run INV calling results on the benchmark dataset.
 ```
@@ -40,8 +41,10 @@ bash /User/INV-Benchmark/benchmark_pipeline/truvari/automated_truvari_bench.sh \
 ```
 
 **Calculate Tier-specific Recall/Pricision/F1**
+
 Tier-specific stats (Recall/Precision/F1) will be in the ${ref_name}_tier_stats.json file
 
+<br><br>
 
 ## 2.1 Assembly-based INV set generation pipeline
 
