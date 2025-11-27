@@ -86,7 +86,7 @@ for ref_vcf in $(ls $ref_dir/*.vcf.gz); do
     truvari bench --pctseq 0 --pick multi --chunksize "$current_refdist" --refdist "$current_refdist" --pctsize 0.3 -b "$ref_vcf" -c "$input_vcf" --sizemax 5400000 -o "./${output_dir_name}_pctseq0_sizemax_5.4mb"
     
     # Post-processing step
-    output_path="./${output_dir_name}_pctseq0_sizemax_5.4mb"
+    output_path="./${output_dir_name}"
     if [ -d "$output_path" ]; then
         python cal_median_normalized_breakpoint_length_deviation.py "$output_path/tp-comp.vcf.gz"
         mv length_breakpoint_deviation.log "$output_path"
