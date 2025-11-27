@@ -1,49 +1,65 @@
 #!/bin/bash
-#SBATCH --job-name=truvari_bench_all
-#SBATCH --output=%x_%A_%a.out
-#SBATCH --error=%x_%A_%a.err
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=1
-#SBATCH --mem=8gb
-#SBATCH --time=3:00:00
-#SBATCH -A proj-fs0002
 
-# Input arguments
-input_vcf=$1
-ref_name=$2
-default_refdist=100000
-
-# Reference directory based on the input reference name
-ref_dir=/data_zenodo/truvari_ref_vcf/$ref_name    #e.g, HG002, HG02818, NA19240
-
-# Check if the corresponding reference directory exists
-if [ ! -d "$ref_dir" ]; then
-    echo "No reference directory found for reference: $ref_name. Exiting."
+# Check if the correct number of arguments is provided
+if [ "$#" -ne 3 ]; then
+    echo "Usage: $0 <input_vcf_path> <reference_sample_name> <local_zenodo_ref_dir>"
+    echo "Example: $0 /path/to/my_calls.vcf HG002 /home/user/my_zenodo_data/truvari_ref_vcf"
     exit 1
 fi
 
-# Source the bashrc to get the conda environment
-mamba activate truvari
+# Input arguments
+input_vcf_path=$1      # The path to the VCF file to be benchmarked
+ref_name=$2            # The name of the reference sample (e.g., HG002)
+zenodo_ref_base_dir=$3 # The local path to the downloaded /data_zenodo/truvari_ref_vcf/
+default_refdist=100000
 
-# Copy the input VCF file to the current directory
-cp $input_vcf .
+# Construct the sample-specific reference directory path
+# For example, if $3 is /local/data/truvari_ref_vcf/, the script looks for HG002_* files there.
+ref_dir="$zenodo_ref_base_dir"
+
+# --- Setup Checks ---
+# Check if the reference directory exists
+if [ ! -d "$ref_dir" ]; then
+    echo "No reference directory found at path: $ref_dir"
+    echo "Please ensure the path to your local copy of '/data_zenodo/truvari_ref_vcf/' is correct."
+    exit 1
+fi
+
+# --- Prepare Input VCF ---
+echo "Preparing input VCF file..."
+
+# Copy the input VCF file to the current directory for processing
+cp "$input_vcf_path" .
 
 # Extract the basename of the input VCF file
-input_vcf_basename=$(basename $input_vcf)
+input_vcf_basename=$(basename "$input_vcf_path")
 
-# Compress the VCF file with bgzip
-bgzip -c $input_vcf_basename > ${input_vcf_basename}.gz
+# Determine the final gzipped VCF name and process if needed
+if [[ "$input_vcf_basename" != *.gz ]]; then
+    # If the file is not gzipped, compress and remove the original
+    echo "Compressing $input_vcf_basename with bgzip..."
+    bgzip -c "$input_vcf_basename" > "${input_vcf_basename}.gz"
+    rm "$input_vcf_basename" 
+    input_vcf="${input_vcf_basename}.gz"
+else
+    # If it's already gzipped, use the existing file
+    input_vcf="$input_vcf_basename"
+fi
 
 # Index the compressed VCF file with tabix
-tabix -p vcf ${input_vcf_basename}.gz
+echo "Indexing $input_vcf with tabix..."
+tabix -p vcf "$input_vcf"
 
-# Update the input VCF file to the compressed version for further processing
-input_vcf="${input_vcf_basename}.gz"
+# --- Run Truvari Benchmarking ---
 
-# Loop through each VCF file in the reference folder
+echo "Searching for reference VCFs matching pattern: *.vcf.gz in $ref_dir"
+
+# Find all reference VCFs that start with the reference sample name
+# The find command ensures we only process files starting with the sample name
 for ref_vcf in $(ls $ref_dir/*.vcf.gz); do
-    base_name=$(basename $ref_vcf .vcf.gz)
-
+    
+    base_name=$(basename "$ref_vcf" .vcf.gz)
+    
     # Reset refdist to default for each loop iteration
     current_refdist=$default_refdist
     
@@ -63,15 +79,23 @@ for ref_vcf in $(ls $ref_dir/*.vcf.gz); do
 
     # Define the output directory name based on the reference name and base name
     output_dir_name="${ref_name}_${base_name}"
-
+    
     echo "Running truvari bench for $ref_vcf against $input_vcf..."
 
     # Run the first truvari bench with the dynamically set refdist and chunksize
-    truvari bench --pctseq 0 --pick multi --chunksize $current_refdist --refdist $current_refdist --pctsize 0.3 -b $ref_vcf -c $input_vcf --sizemax 5400000 -o ./${output_dir_name}_pctseq0_sizemax_5.4mb
-    python cal_median_normalized_breakpoint_length_deviation.py ./${output_dir_name}_pctseq0_sizemax_5.4mb/tp-comp.vcf.gz
-    mv length_breakpoint_deviation.log ./${output_dir_name}_pctseq0_sizemax_5.4mb
+    truvari bench --pctseq 0 --pick multi --chunksize "$current_refdist" --refdist "$current_refdist" --pctsize 0.3 -b "$ref_vcf" -c "$input_vcf" --sizemax 5400000 -o "./${output_dir_name}_pctseq0_sizemax_5.4mb"
+    
+    # Post-processing step
+    output_path="./${output_dir_name}_pctseq0_sizemax_5.4mb"
+    if [ -d "$output_path" ]; then
+        python cal_median_normalized_breakpoint_length_deviation.py "$output_path/tp-comp.vcf.gz"
+        mv length_breakpoint_deviation.log "$output_path"
+    else
+        echo "WARNING: truvari bench failed to create output directory for $base_name. Skipping deviation calculation."
+    fi
 
     echo "Finished running truvari bench for $ref_vcf against $input_vcf."
+
 done
 
 echo "All truvari bench runs completed."
