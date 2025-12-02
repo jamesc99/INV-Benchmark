@@ -151,7 +151,7 @@ ${Ref_name}_${base_name}: Folder contains Truvari bench output
 ```
 
 ## Publication
-Check out the preprint [here]().
+Check out the preprint [here](https://www.biorxiv.org/content/10.1101/2025.11.28.691176v1).
 
 ## Data Availability
 VCF files used in this benchmark were uploaded to: [zenodo link here.](https://zenodo.org/records/17624133)
